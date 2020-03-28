@@ -1,31 +1,33 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 .bg {
-    background-image: url("../img/bg.jpg");
-  
-    height: 100%;
-  
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  background-image: url("../img/bg.jpg");
 
-  .subtitle {
-      color: rgb(201, 201, 201);
-  }
+  height: 100%;
 
-  h1 {
-      color: white;
-  }
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  #get-started  {
-      padding: 0.7em 1.5em;
-      font-size: 1em;
-  }
+.subtitle {
+  color: rgb(218, 218, 218);
+  font-size: 3em;
+}
+
+.main h1 {
+  font-weight: 500;
+  color: white;
+}
+
+#get-started {
+  padding: 0.7em 1.5em;
+  font-size: 1.3em;
+}
