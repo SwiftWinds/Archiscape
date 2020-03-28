@@ -25,7 +25,7 @@
 
   <body ng-app="modelingApp">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary pl-5">
-      <a class="navbar-brand" href="#">Name</a>
+      <a class="navbar-brand" href="#home">Name</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -41,24 +41,21 @@
       <div class="collapse navbar-collapse float-right" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="#home"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#start">Start</a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div class="container-fluid bg pl-5 pt-5 main">
+    <div class="container-fluid bg pl-5 pt-5" id="home">
       <h1 class="display-2 pt-5 ">NameOfThing</h1>
       <h2 class="subtitle display-5 mt-3">
         Floorplan to 3D model in a single click.
@@ -73,7 +70,7 @@
       </button>
     </div>
 
-    <div class="container mt-5 mb-5 about">
+    <div class="container mt-5 mb-5" id="about">
       <div class="row justify-content-center">
         <h1><b>Speed up renovation and homebuilding.</b></h1>
       </div>
@@ -103,7 +100,7 @@
       </div>
     </div>
 
-    <div class="container mb-5">
+    <div class="container mb-5" id="start">
       <div class="row justify-content-center">
         <div class="col text-center">
           <h1><b>A 3D model from just a 2D floorplan.</b></h1>
