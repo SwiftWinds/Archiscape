@@ -9,27 +9,38 @@
 }
 .bg {
   background-image: url("../img/bg.jpg");
-
   height: 100%;
+}
 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.main {
+  min-width: 100%;
 }
 
 .subtitle {
   color: rgb(218, 218, 218);
-  font-size: 3em;
+  font-size: 2em;
 }
 
-#home h1 {
+.main-title {
   font-weight: 500;
   color: white;
+  font-size: 3.5em;
+  margin-top: 20vh;
+  max-width: 100%;
+}
+
+.navbar-toggler {
+  color: #fff;
+  border: 0;
 }
 
 .big-btn {
   padding: 0.7em 1.5em;
   font-size: 1.3em;
+}
+
+#about {
+  background-color: rgb(248, 248, 248);
 }
 
 #learn-more {

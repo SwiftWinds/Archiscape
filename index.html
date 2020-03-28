@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sketch to Model</title>
+    <title>NameOfThing</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link
@@ -22,7 +22,7 @@
   </head>
 
   <body ng-app="modelingApp">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary pl-5">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary pl-md-5">
       <a class="navbar-brand" href="#home">Name</a>
       <button
         class="navbar-toggler"
@@ -53,34 +53,49 @@
       </div>
     </nav>
 
-    <div class="container-fluid bg pl-5 pt-5" id="home">
-      <h1 class="display-2 pt-5 ">NameOfThing</h1>
-      <h2 class="subtitle display-5 mt-3">
-        Floorplan to 3D model in a single click.
-      </h2>
-      <button
-        type="button"
-        id="get-started"
-        class="btn btn-primary btn-lg mt-4 big-btn"
-        onclick="window.location.href = 'model.html';"
-      >
-        Get Started
-      </button>
-      <a
-        href="#about"
-        id="learn-more"
-        class="btn btn-outline-light btn-lg mt-4 big-btn"
-      >
-        Learn more
-      </a>
+    <div class="main container-fluid bg pl-md-5" id="home">
+      <div class="row">
+        <div class="col">
+          <h1 class="main-title">NameThing</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2 class="subtitle">
+            3D virtual tours and models made easy.
+          </h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <a
+            href="start"
+            id="get-started"
+            class="btn btn-primary btn-lg mt-4 big-btn"
+          >
+            Get Started
+          </a>
+          <a
+            href="#about"
+            id="learn-more"
+            class="btn btn-outline-light btn-lg mt-4 big-btn"
+          >
+            Learn more
+          </a>
+        </div>
+      </div>
     </div>
 
-    <div class="container mt-5 mb-5" id="about">
+    <div class="container-fluid pt-5 pb-5" id="about">
       <div class="row justify-content-center">
-        <h1><b>Speed up renovation and homebuilding.</b></h1>
+        <div class="col text-center">
+          <h1><b>Speed up renovation and homebuilding.</b></h1>
+        </div>
       </div>
-      <div class="row pt-3">
-        <div class="col-5 text-center">
+
+      <div class="row p-3 justify-content-around">
+        <div class="col-md-6 text-center">
           <h2>
             Strong infrastructure.
           </h2>
@@ -90,8 +105,7 @@
             voluptatum, repellendus alias iusto, ullam nulla rem soluta!
           </p>
         </div>
-        <div class="col-2"></div>
-        <div class="col-5 text-center">
+        <div class="col-md-6 text-center">
           <h2>
             Blah.
           </h2>
@@ -105,7 +119,7 @@
       </div>
     </div>
 
-    <div class="container mb-5" id="start">
+    <div class="container-fluid pt-5 pb-5" id="start">
       <div class="row justify-content-center">
         <div class="col text-center">
           <h1><b>A 3D model from just a 2D floorplan.</b></h1>
