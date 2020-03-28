@@ -1,12 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
 .bg {
-    /* The image used */
     background-image: url("../img/bg.jpg");
   
-    /* Full height */
     height: 100%;
   
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .subtitle {
+      color: rgb(201, 201, 201);
+  }
+
+  h1 {
+      color: white;
+  }
+
+  #get-started  {
+      padding: 0.7em 1.5em;
+      font-size: 1em;
   }
