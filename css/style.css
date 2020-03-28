@@ -33,18 +33,29 @@
 }
 
 .big-p {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 .nav-link {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 .nav-item {
-    padding-left: 1.5em;
+  padding-left: 1.5em;
 }
 
 .navbar-brand {
-    font-size: 1.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.btn {
+  font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+strong {
     font-weight: bold;
 }
+
+.p-title
