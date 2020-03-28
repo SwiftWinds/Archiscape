@@ -27,9 +27,18 @@
   color: white;
 }
 
-#get-started {
+.big-btn {
   padding: 0.7em 1.5em;
   font-size: 1.3em;
+}
+
+#learn-more {
+  color: white;
+}
+
+#learn-more:hover {
+  background-color: white;
+  color: #333
 }
 
 .big-p {
@@ -52,4 +61,8 @@
 .btn {
   font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
