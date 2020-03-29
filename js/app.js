@@ -291,72 +291,67 @@ var overalMesh;
 	Step 3: Optimize the 3D models with ThreeJS's Geometry merge function
 */
 var init = function(blockMap) {
-  var cubeX = 1;
-  var cubeY = 1;
-  var cubeZ = 100; // height of the walls
+    var cubeX = 1;
+    var cubeY = 1;
+    var cubeZ = 100; // height of the walls
 
-  scene = new THREE.Scene();
-  camera = new THREE.OrthographicCamera(
-    window.innerWidth / -2,
-    window.innerWidth / 2,
-    window.innerHeight / 2,
-    window.innerHeight / -2,
-    0.1,
-    20000
-  );
+    scene = new THREE.Scene();
+    camera = new THREE.OrthographicCamera(window.innerWidth / -2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / -2, 0.1, 20000);
 
-  camera.position.x = window.innerWidth / 2;
-  camera.position.y = window.innerHeight / 2;
-  camera.position.z = 100;
+    camera.position.x = window.innerWidth / 2;
+    camera.position.y = window.innerHeight / 2;
+    camera.position.z = 100;
 
-  camera.rotation.x += 0.25;
-  camera.position.x -= 450;
-  camera.position.y -= 50;
+    camera.rotation.x += 0.25;
+    camera.position.x -= 450;
+    camera.position.y -= 50;
 
-  var directionalLight = new THREE.DirectionalLight(0x00ff00, 1);
-  directionalLight.position.set(0, 1, 0);
-  scene.add(directionalLight);
+    var directionalLight = new THREE.DirectionalLight(0x00ff00, 1);
+    directionalLight.position.set(0, 1, 0);
+    scene.add(directionalLight);
 
-  renderer = new THREE.WebGLRenderer();
-  renderer.setClearColor(0xffffff, 1);
-  renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer = new THREE.WebGLRenderer();
+    renderer.setClearColor(0xffffff, 1);
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
-  document.body.appendChild(renderer.domElement);
+    document.body.appendChild(renderer.domElement);
 
-  var mats = [];
-  mats.push(new THREE.MeshBasicMaterial({ color: 0xbcbfa4 })); //RIGHT:dark white
-  mats.push(new THREE.MeshBasicMaterial({ color: 0xbcbfa4 })); //LEFT: dark white
-  mats.push(new THREE.MeshBasicMaterial({ color: 0xbcbfa4 })); //Back: dark white
-  mats.push(new THREE.MeshBasicMaterial({ color: 0xd0d3b7 })); //Front: white
-  mats.push(new THREE.MeshBasicMaterial({ color: 0x5b5b5b })); //TOP: Grey
-  mats.push(new THREE.MeshBasicMaterial({ color: 0x0000 })); //Bottom:black
-  var faceMaterial = new THREE.MeshFaceMaterial(mats);
+    var mats = [];
+    mats.push(new THREE.MeshBasicMaterial({ color: 0xbcbfa4 })); //RIGHT:dark white
+    mats.push(new THREE.MeshBasicMaterial({ color: "rgb(0, 0, 0)" })); //LEFT: dark white
+    mats.push(new THREE.MeshBasicMaterial({ color: 0xbcbfa4 })); //Back: dark white
+    mats.push(new THREE.MeshBasicMaterial({ color: "rgb(0, 0, 0)" })); //Front: white
+    mats.push(new THREE.MeshBasicMaterial({ color: 0x5b5b5b })); //TOP: Grey
+    mats.push(new THREE.MeshBasicMaterial({ color: 0x0000 })); //Bottom:black
+    var faceMaterial = new THREE.MeshFaceMaterial(mats);
 
-  var len = 0;
-  var overalGeometry = new THREE.Geometry();
-  for (var row = 0; row < blockMap.length; row++) {
-    for (var col = 0; col < blockMap[row].length; col++) {
-      if (blockMap[row][col] != 0 && blockMap[row][col] != "M") {
-        len = blockMap[row][col].split(":")[1];
-        var geometry = new THREE.BoxGeometry(len, len, cubeZ);
-        var cube = new THREE.Mesh(geometry, faceMaterial);
+    
+    var len = 0;
+    var overalGeometry = new THREE.Geometry();
+    for (var row = 0; row < blockMap.length; row++) {
+        for (var col = 0; col < blockMap[row].length; col++) {
+            if (blockMap[row][col] != 0 && blockMap[row][col] != "M") {
+                len = (blockMap[row][col].split(":"))[1];
+                var geometry = new THREE.BoxGeometry(len, len, cubeZ);
+                var cube = new THREE.Mesh(geometry, faceMaterial);
 
-        cube.position.x = row + len / 2.0;
-        cube.position.y = col + len / 2.0;
+                cube.position.x = row + len / 2.0;
+                cube.position.y = col + len / 2.0;
 
-        cube.updateMatrix();
-        overalGeometry.merge(cube.geometry, cube.matrix);
-      }
+                cube.updateMatrix();
+                overalGeometry.merge(cube.geometry, cube.matrix);
+            }
+        }
     }
-  }
-  overalMesh = new THREE.Mesh(overalGeometry, faceMaterial);
-  scene.add(overalMesh);
+    overalMesh = new THREE.Mesh(overalGeometry, faceMaterial);
+    scene.add(overalMesh);
 
-  // var controls = new THREE.OrbitControls(camera, renderer.domElement );
+    var controls = new THREE.OrbitControls(camera, renderer.domElement); // for orbit controls
 };
+
 
 // step 4: Render 3D model
 var render = function() {
-  requestAnimationFrame(render);
-  renderer.render(scene, camera);
+    requestAnimationFrame(render);
+    renderer.render(scene, camera);
 };
