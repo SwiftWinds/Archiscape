@@ -51,7 +51,7 @@
 
       <div class="container-fluid bg main-card-container">
         <div class="card bg-light main-card shadow-lg">
-          <div class="card-header">
+          <div class="card-header" id="modeling-header">
             <h1 class="mt-2"><b>3D Modeling</b></h1>
           </div>
           <div class=" container-fluid card-body">
@@ -90,7 +90,7 @@
                 </button>
 
                 <div class="row">
-                  <div class="col-6">
+                  <div class="col-md-6 col-9">
                     <img
                       id="floorplan"
                       src="#"
@@ -101,7 +101,7 @@
                 </div>
               </div>
 
-              <div class="container align-content-center">
+              <div class="container-fluid align-content-center">
                 <div class="md-toolbar-tools" ng-if="ready">
                   <!-- <h2>
                       <span class="modeling-nav" ng-click="reload()"
@@ -168,17 +168,17 @@
                 </div>
 
                 <div class="row justify-content-center">
-                  <div class="col-6 p-4 text-center" id="canvas-container">
+                  <div class="col-8 text-center" id="canvas-container">
                     <canvas
                       id="mycanvas"
-                      style="max-width: 40vh;
-                    max-height: 30vh;"
+                      style="max-width:70vw;
+                    max-height: 40vh;"
                     ></canvas>
                   </div>
                 </div>
 
                 <div class="row justify-content-center">
-                  <div class="col-6">
+                  <div class="col-md-7 col">
                     <div class="form-group">
                       <input
                         ng-if="ready"
@@ -189,7 +189,7 @@
                       />
                     </div>
                   </div>
-                  <div class="col-2">
+                  <div class="col-md-3 col">
                     <button
                       ng-if="ready"
                       type="button"

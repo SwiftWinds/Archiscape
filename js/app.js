@@ -24,7 +24,7 @@ angular
         $mdDialog.show(confirm).then(
           function() {
             $(
-              "#floorplan, #fileInput, #fileInputButton, #renderButton, #instructionsRow"
+              "#floorplan, #fileInput, #fileInputButton, #modeling-header, #renderButton, #instructionsRow"
             ).hide();
             $scope.draw3dModel();
           },
@@ -50,7 +50,6 @@ angular
                 $("#floorplan").attr("src", e.target.result);
                 $("#floorplan").css({
                   display: "block",
-                  "max-width": "40vw",
                   "max-height": "40vh"
                 });
               };
@@ -324,6 +323,8 @@ var init = function(blockMap) {
 
   let mycanvas = document.getElementById("mycanvas");
 
+  mycanvas.style.border = "2px solid #333";
+
   renderer = new THREE.WebGLRenderer({
     canvas: mycanvas
   });
@@ -331,7 +332,6 @@ var init = function(blockMap) {
   renderer.setClearColor(0xffffff, 1);
   renderer.setSize(window.innerWidth, window.innerHeight);
 
-  console.log(renderer.domElement);
   // document.body.appendChild(renderer.domElement);
   document.getElementById("canvas-container").appendChild(renderer.domElement);
 
