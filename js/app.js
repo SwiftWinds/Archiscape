@@ -273,7 +273,7 @@ var overalMesh
 var init = function(blockMap) {
     var cubeX = 1;
     var cubeY = 1;
-    var cubeZ = 100;
+    var cubeZ = 100; // height of the walls
 
     scene = new THREE.Scene();
     camera = new THREE.OrthographicCamera(window.innerWidth / -2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / -2, 0.1, 20000);
