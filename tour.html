@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="img/logo.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Archiscape</title>
@@ -37,7 +37,7 @@
       </div>
     </nav>
 
-    <div class="container-fluid bg main-card-container">
+    <div class="container-fluid bg main-card-container2">
       <div class="card bg-light main-card shadow-lg">
         <div class="card-header" id="modeling-header">
           <h1 class="mt-2"><b>Virtual Tour</b></h1>
@@ -54,6 +54,22 @@
                 we'll do the rest! <b>You can edit the generated PCD file</b> to
                 add or edit anything from furniture to rooms.
               </p>
+
+              <button
+                id="fileInputButton"
+                class="btn btn-outline-primary"
+                ng-click="convertImageToData()"
+              >
+                Select File
+              </button>
+              <input
+                id="fileInput"
+                name="file"
+                type="file"
+                style="display:none;"
+                file
+                multiple
+              />
             </div>
           </div>
         </div>
