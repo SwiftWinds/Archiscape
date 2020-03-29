@@ -38,3 +38,22 @@ function signUpWithGoogle() {
         // ...
     });
 }
+// user/photos
+function uploadData() {
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+    var storageRef = firebase.storage().ref();
+    var userRef = storageRef.child(uid);
+    var file = new File();
+    userRef.put(file).then(function (snapshot) {
+        console.log('file uploaded');
+    });
+
+}
+function getData() {
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+    var storageRef = firebase.storage.ref();
+    var userRef = storageRef.child(uid);
+
+}
