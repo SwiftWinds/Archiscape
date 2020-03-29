@@ -287,7 +287,7 @@ var init = function(blockMap) {
 
     renderer = new THREE.WebGLRenderer();
     renderer.setClearColor(0xffffff, 1);
-    renderer.setSize((window.innerWidth + 200), (window.innerHeight + 200));
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
     document.body.appendChild(renderer.domElement);
 
@@ -296,8 +296,8 @@ var init = function(blockMap) {
     mats.push(new THREE.MeshBasicMaterial({ color: 0xbcbfa4 })); //LEFT: dark white
     mats.push(new THREE.MeshBasicMaterial({ color: 0xbcbfa4 })); //Back: dark white
     mats.push(new THREE.MeshBasicMaterial({ color: 0xd0d3b7 })); //Front: white
-    mats.push(new THREE.MeshBasicMaterial({ color: 000000 })); //TOP: black
-    mats.push(new THREE.MeshBasicMaterial({ color: 000000 })); //Bottom:black
+    mats.push(new THREE.MeshBasicMaterial({ color: 0x5b5b5b })); //TOP: Grey
+    mats.push(new THREE.MeshBasicMaterial({ color: 0x0000 })); //Bottom:black
     var faceMaterial = new THREE.MeshFaceMaterial(mats);
 
     var len = 0;
