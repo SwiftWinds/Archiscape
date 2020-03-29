@@ -95,3 +95,21 @@ b {
 ul {
   list-style-type: none;
 }
+
+.go-button {
+  background-color: #184f99;
+  border: 0;
+  font-size: 1.5em;
+}
+
+.go-button:hover {
+  background-color: #144587;
+}
+
+.blue {
+  color: #184f99;
+}
+
+h2.blue {
+  color: #0f3466;
+}
