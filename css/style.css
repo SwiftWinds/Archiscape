@@ -40,22 +40,7 @@ md-content {
   overflow-y: hidden;
 }
 
-.md-toolbar-tools button {
-  border: 1px #333 solid;
-  -webkit-transform: none;
-  transform: none;
-  border-radius: 5px;
-}
-
-.md-toolbar-tools button:hover, .md-toolbar-tools button:active {
-  background-color: #eeeeee;
-}
-
-#mycanvas {
-  border-radius: 5px;
-}
-
-#save-model-button {
+#save-model-button, #mycanvas {
   -webkit-transform: none;
   transform: none;
 }
