@@ -31,34 +31,48 @@
   </head>
 
   <body ng-app="modelingApp">
-    <nav
-      class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary pl-md-5"
-    >
-      <a class="navbar-brand" href="#home">Name</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Navbar</a>
       <button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarColor01"
-        aria-controls="navbarColor01"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse float-right" id="navbarColor01">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#home"
+            <a class="nav-link" href="#"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#">Link</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#start">Start</a>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
           </li>
         </ul>
       </div>
@@ -172,7 +186,8 @@
         </div>
         <div class="row p-5 p-md-0 pt-md-5 justify-content-around">
           <div
-            class="col-md-5 mb-4 m-md-0 ml-md-5 card card-body shadow text-center wow fadeIn slow" data-wow-delay="0.2s"
+            class="col-md-5 mb-4 m-md-0 ml-md-5 card card-body shadow text-center wow fadeIn slow"
+            data-wow-delay="0.2s"
           >
             <h2 class="mb-3 blue"><b>A 3D model from a 2D floorplan.</b></h2>
             <p class="lead">
@@ -196,7 +211,10 @@
             </button>
           </div>
 
-          <div class="col-md-5 mr-md-5 card card-body shadow text-center wow fadeIn slow" data-wow-delay="0.4s">
+          <div
+            class="col-md-5 mr-md-5 card card-body shadow text-center wow fadeIn slow"
+            data-wow-delay="0.4s"
+          >
             <h2 class="mb-3 blue"><b>A virtual tour from a 3D model.</b></h2>
             <p class="lead">
               Give virtual tours with the 3D model we generate from your
