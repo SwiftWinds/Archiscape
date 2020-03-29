@@ -23,8 +23,9 @@ angular.module('modelingApp', ['ngMaterial'])
         }, function() {});
     };
 
-    /*
-    	Pick File, Draw Image and obtain image data
+    /* 
+			Pick File, Draw Image and obtain image data
+			Called on press select file (before 'Submit')
     */
     $scope.convertImageToData = function() {
         var fileInput = document.getElementById('fileInput');
@@ -36,20 +37,19 @@ angular.module('modelingApp', ['ngMaterial'])
                 var ctx = document.getElementById('canvas').getContext('2d');
                 var img = new Image();
                 img.onload = function() {
-                    ctx.canvas.width = img.width;
-                    ctx.canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0, img.width, img.height);
-                    //Retrieve data
-                    $scope.imgData = ctx.getImageData(0, 0, img.width, img.height);
-                    $scope.fileName = file.name;
-                    //Convert to binary format
-                    $scope.convertDataToBinaryArray($scope.imgData);
-                    $scope.$apply();
-                }
-                img.src = URL.createObjectURL(file);
-
+									ctx.canvas.width = img.width;
+									ctx.canvas.height = img.height;
+									ctx.drawImage(img, 0,0, img.width, img.height);
+									//Retrieve data
+									$scope.imgData = ctx.getImageData(0, 0, img.width, img.height);
+									$scope.fileName = file.name;
+									//Convert to binary format
+									$scope.convertDataToBinaryArray($scope.imgData);
+									$scope.$apply();
+								}
+								img.src = URL.createObjectURL(file);
             } else {
-                alert("File not supported. You must use a .png");
+							alert("File not supported. You must use a .png");
             }
 
         });
@@ -72,7 +72,8 @@ angular.module('modelingApp', ['ngMaterial'])
     }
 
     /*
-    	Convert RGBA data into binary array
+			Convert RGBA data into binary array
+			Step 1: Convert png into binary code
     */
     $scope.convertDataToBinaryArray = function(data) {
         var pixels = data.data;
@@ -102,6 +103,7 @@ angular.module('modelingApp', ['ngMaterial'])
 
     //Render 3D model with three.js
     $scope.draw3dModel = function() {
+				// Optimize the binary 2D array with BFS
         $scope.binaryData = $scope.optimizeDataset($scope.binaryData);
 
         console.log("Draw it now!");
@@ -110,9 +112,11 @@ angular.module('modelingApp', ['ngMaterial'])
         $scope.ready = true;
         console.log("3D model is constructed.");
 
-    };
+		};
+
     /*
-    	Optimize the dataset by reducing the number of cubes needed
+			Optimize the dataset by reducing the number of cubes needed
+			Step 2: Optimize the binary 2D array with BFS
     */
     $scope.optimizeDataset = function(dataInput) {
         var dataset = dataInput;
@@ -264,6 +268,7 @@ var overalMesh
 
 /*
 	Initialize the the scene with cubes merged into geometry.
+	Step 3: Optimize the 3D models with ThreeJS's Geometry merge function
 */
 var init = function(blockMap) {
     var cubeX = 1;
@@ -320,10 +325,11 @@ var init = function(blockMap) {
     overalMesh = new THREE.Mesh(overalGeometry, faceMaterial);
     scene.add(overalMesh);
 
-    //var controls = new THREE.OrbitControls(camera, renderer.domElement );
+    // var controls = new THREE.OrbitControls(camera, renderer.domElement );
 };
 
 
+// step 4: Render 3D model
 var render = function() {
     requestAnimationFrame(render);
     renderer.render(scene, camera);
