@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <link rel="icon" href="img/logo.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Archiscape</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" id="custom-brand" href="index.html"
-        ><img src="img/logo.png" style="width: 1.2em; margin-bottom: .3em" />
-        Archiscape</a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+        <a class="navbar-brand" id="custom-brand" href="index.html"><img src="img/logo.png" style="width: 1.2em; margin-bottom: .3em" /> Archiscape
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto mr-2">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html"
-              >Return Home <span class="sr-only">(current)</span></a
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mr-2">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Return Home <span class="sr-only">(current)</span></a
             >
           </li>
         </ul>
@@ -52,148 +42,60 @@
                   clicks. </i
                 ><br />
                 All you need to do is <b>upload some panorama photos</b> and
-                we'll do the rest! <b>You can edit the generated PCD file</b> to
-                add or edit anything from furniture to rooms.
+                we'll do the rest! <b>You can download and edit the generated PCD file</b> to
+                adjust the 3D model in any way you wish.
               </p>
 
               <button
-                id="fileInputButton"
+                id="imageInput"
                 class="btn btn-outline-primary"
-                ng-click="convertImageToData()"
               >
-                Select File
+                Select Image
               </button>
-              <input
-                id="fileInput"
-                name="file"
-                type="file"
-                style="display:none;"
-                file
-                multiple
-              />
-            </div>
-          </div>
-          <div class="row mt-4">
+              <a href="copy_of_fragment.pcd" download>
+                <button
+                id="download"
+                class="btn btn-outline-primary"
+              >
+                Download PCD File
+              </button>
+              </a>
+                    <input id="fileInput" name="file" type="file" style="display:none;" file multiple />
+        </div>
+        </div>
+        <div class="row mt-4">
             <div class="col-md-6 col">
-              <div class="alert alert-dismissible alert-success">
-                <button type="button" class="close" data-dismiss="alert">
+                <div class="alert alert-dismissible alert-success">
+                    <button type="button" class="close" data-dismiss="alert">
                   &times;
                 </button>
-                <strong>See below</strong> for the rendered 3D model.</a>.
-              </div>
+                    <strong>See below</strong> for the rendered 3D model.</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
+        </div>
+        </div>
+        </div>
 
-    <script type="module">
-      import * as THREE from "./build/three.module.js";
-      import Stats from "./jsm/libs/stats.module.js";
-      import { TrackballControls } from "./jsm/controls/TrackballControls.js";
-      import { PCDLoader } from "./jsm/loaders/PCDLoader.js";
-      var container, stats;
-      var camera, controls, scene, renderer;
-      init();
-      animate();
-      function init() {
-        scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x000000);
-        camera = new THREE.PerspectiveCamera(
-          15,
-          window.innerWidth / window.innerHeight,
-          0.01,
-          40
-        );
-        camera.position.x = -13;
-        camera.position.z = 14;
-        camera.position.y = 12;
-        camera.up.set(0, 0, 1);
-        scene.add(camera);
-        renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-        var loader = new PCDLoader();
-        loader.load(
-          "copy_of_fragment.pcd",
-          function(mesh) {
-            scene.add(mesh);
-          },
-          function(points) {
-            scene.add(points);
-            var center = points.geometry.boundingSphere.center;
-            controls.target.set(center.x, center.y, center.z);
-            controls.update();
-          }
-        );
-        container = document.createElement("div");
-        document.body.appendChild(container);
-        container.appendChild(renderer.domElement);
-        controls = new TrackballControls(camera, renderer.domElement);
-        controls.rotateSpeed = 2.0;
-        controls.zoomSpeed = 0.3;
-        controls.panSpeed = 0.2;
-        controls.staticMoving = true;
-        controls.minDistance = 0.3;
-        controls.maxDistance = 0.3 * 100;
-        window.addEventListener("resize", onWindowResize, false);
-        window.addEventListener("keypress", keyboard);
-        new Promise(res => setTimeout(res, 1500)).then(() => {
-          const points = scene.getObjectByName("copy_of_fragment.pcd");
-          points.material.size *= 40;
-          points.material.needsUpdate = true;
-        })
-      }
-      function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        controls.handleResize();
-      }
-      function keyboard(ev) {
-        var points = scene.getObjectByName("copy_of_fragment.pcd");
-        switch (ev.key || String.fromCharCode(ev.keyCode || ev.charCode)) {
-          case "+":
-            console.log(camera);
-            points.material.size *= 1.2;
-            points.material.needsUpdate = true;
-            console.log("+++");
-            break;
-          case "-":
-            points.material.size /= 1.2;
-            points.material.needsUpdate = true;
-            break;
-          case "c":
-            points.material.color.setHex(Math.random() * 0xffffff);
-            points.material.needsUpdate = true;
-            break;
-        }
-      }
-      function animate() {
-        requestAnimationFrame(animate);
-        controls.update();
-        renderer.render(scene, camera);
-        stats.update();
-      }
- 
-    </script>
+        <script type="module">
+            import * as THREE from "./build/three.module.js"; import Stats from "./jsm/libs/stats.module.js"; import { TrackballControls } from "./jsm/controls/TrackballControls.js"; import { PCDLoader } from "./jsm/loaders/PCDLoader.js"; var container, stats; var
+            camera, controls, scene, renderer; init(); animate(); function init() { scene = new THREE.Scene(); scene.background = new THREE.Color(0x000000); camera = new THREE.PerspectiveCamera( 15, window.innerWidth / window.innerHeight, 0.01, 40 );
+            camera.position.x = -13; camera.position.z = 14; camera.position.y = 12; camera.up.set(0, 0, 1); scene.add(camera); renderer = new THREE.WebGLRenderer({ antialias: true }); renderer.setPixelRatio(window.devicePixelRatio); renderer.setSize(window.innerWidth,
+            window.innerHeight); document.body.appendChild(renderer.domElement); var loader = new PCDLoader(); loader.load( "copy_of_fragment.pcd", function(mesh) { scene.add(mesh); }, function(points) { scene.add(points); var center = points.geometry.boundingSphere.center;
+            controls.target.set(center.x, center.y, center.z); controls.update(); } ); container = document.createElement("div"); document.body.appendChild(container); container.appendChild(renderer.domElement); controls = new TrackballControls(camera,
+            renderer.domElement); controls.rotateSpeed = 2.0; controls.zoomSpeed = 0.3; controls.panSpeed = 0.2; controls.staticMoving = true; controls.minDistance = 0.3; controls.maxDistance = 0.3 * 100; window.addEventListener("resize", onWindowResize,
+            false); window.addEventListener("keypress", keyboard); new Promise(res => setTimeout(res, 1500)).then(() => { const points = scene.getObjectByName("copy_of_fragment.pcd"); points.material.size *= 40; points.material.needsUpdate = true; })
+            } function onWindowResize() { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); controls.handleResize(); } function keyboard(ev) { var points =
+            scene.getObjectByName("copy_of_fragment.pcd"); switch (ev.key || String.fromCharCode(ev.keyCode || ev.charCode)) { case "+": console.log(camera); points.material.size *= 1.2; points.material.needsUpdate = true; console.log("+++"); break; case
+            "-": points.material.size /= 1.2; points.material.needsUpdate = true; break; case "c": points.material.color.setHex(Math.random() * 0xffffff); points.material.needsUpdate = true; break; } } function animate() { requestAnimationFrame(animate);
+            controls.update(); renderer.render(scene, camera); stats.update(); }
 
-    <!--bootstrap-->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+        </script>
+
+        <!--bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
 </html>
