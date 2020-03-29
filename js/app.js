@@ -38,18 +38,18 @@ angular.module('modelingApp', ['ngMaterial'])
                 img.onload = function() {
                     ctx.canvas.width = img.width;
                     ctx.canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0, img.width, img.height);
-                    //Retrieve data
-                    $scope.imgData = ctx.getImageData(0, 0, img.width, img.height);
-                    $scope.fileName = file.name;
-                    //Convert to binary format
-                    $scope.convertDataToBinaryArray($scope.imgData);
-                    $scope.$apply();
+								ctx.drawImage(img, 0,0, img.width, img.height);
+								//Retrieve data
+								$scope.imgData = ctx.getImageData(0, 0, img.width, img.height);
+								$scope.fileName = file.name;
+								//Convert to binary format
+								$scope.convertDataToBinaryArray($scope.imgData);
+								$scope.$apply();
                 }
                 img.src = URL.createObjectURL(file);
 
             } else {
-                console.log("File not supported!");
+				alert("File not supported. You must use a .png");
             }
 
         });

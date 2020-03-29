@@ -109,6 +109,7 @@
                     <md-button ng-click="scaleMinus()">Scale-</md-button>
                   </div>
                 </div>
+<<<<<<< HEAD
               </div>
             </md-content>
 
@@ -139,8 +140,76 @@
               Save Model
             </button>
           </div>
+=======
+            </md-toolbar>
+        </md-content>
+        <md-content flex layout-padding ng-if="!ready && fileName.length <= 0">
+            <h1>How it works</h1>
+            <div
+              class="col-md-5 mr-md-5 card card-body shadow text-center wow fadeIn slow"
+              data-wow-delay="0.4s"
+            >
+              <h2 class="mb-3 blue"><b>1. Upload a Floor Plan</b></h2>
+              <p class="lead">
+                Send us a PNG
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-primary go-button"
+                onclick="window.location.href = 'model.html';"
+              >
+                Go!
+              </button>
+            </div>
+            <div
+              class="col-md-5 mr-md-5 card card-body shadow text-center wow fadeIn slow"
+              data-wow-delay="0.4s"
+            >
+              <h2 class="mb-3 blue"><b>2. Generate your 3D Building</b></h2>
+              <p class="lead">
+                Our software turns your floor plan into a 3 dimensional walkthrough
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-primary go-button"
+                onclick="window.location.href = 'model.html';"
+              >
+                Go!
+              </button>
+            </div>
+            <div
+              class="col-md-5 mr-md-5 card card-body shadow text-center wow fadeIn slow"
+              data-wow-delay="0.4s"
+            >
+              <h2 class="mb-3 blue"><b>3. Save and Edit your models anywhere</b></h2>
+              <p class="lead">
+                View your models and export files
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-primary go-button"
+                onclick="window.location.href = 'model.html';"
+              >
+                Go!
+              </button>
+            </div>
+        </md-content>
+
+        <div ng-if="!ready">
+            <canvas id="canvas" width="0" height="0">
+        Your browser does not support the HTML5 canvas tag. Please update to the latest Chrome, Firefox, or Safari.
+      </canvas>
+>>>>>>> 14d5601a9fb2272001a7955e9420515e2653694e
         </div>
       </div>
     </div>
+<<<<<<< HEAD
   </body>
+=======
+</body>
+
+>>>>>>> 14d5601a9fb2272001a7955e9420515e2653694e
 </html>
