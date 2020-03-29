@@ -105,8 +105,9 @@
           0.01,
           40
         );
-        camera.position.x = 0.4;
-        camera.position.z = -2;
+        camera.position.x = -13;
+        camera.position.z = 14;
+        camera.position.y = 12;
         camera.up.set(0, 0, 1);
         scene.add(camera);
         renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -140,6 +141,11 @@
         container.appendChild(stats.dom);
         window.addEventListener("resize", onWindowResize, false);
         window.addEventListener("keypress", keyboard);
+        new Promise(res => setTimeout(res, 1500)).then(() => {
+          const points = scene.getObjectByName("copy_of_fragment.pcd");
+          points.material.size *= 40;
+          points.material.needsUpdate = true;
+        })
       }
       function onWindowResize() {
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -151,6 +157,7 @@
         var points = scene.getObjectByName("copy_of_fragment.pcd");
         switch (ev.key || String.fromCharCode(ev.keyCode || ev.charCode)) {
           case "+":
+            console.log(camera);
             points.material.size *= 1.2;
             points.material.needsUpdate = true;
             console.log("+++");
@@ -171,6 +178,7 @@
         renderer.render(scene, camera);
         stats.update();
       }
+ 
     </script>
 
     <!--bootstrap-->
