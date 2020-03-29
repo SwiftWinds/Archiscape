@@ -5,8 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Archiscape</title>
+
+    
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    
   </head>
 
   <body>
@@ -38,7 +42,7 @@
       </div>
     </nav>
 
-    <div class="container-fluid bg main-card-container2">
+    <div class="container-fluid bg main-card-container2 bg-full">
       <div class="card bg-light main-card shadow-lg">
         <div class="card-header" id="modeling-header">
           <h1 class="mt-2"><b>Virtual Tour</b></h1>
@@ -56,21 +60,11 @@
                 add or edit anything from furniture to rooms.
               </p>
 
-              <button
-                id="fileInputButton"
-                class="btn btn-outline-primary"
-                ng-click="convertImageToData()"
-              >
-                Select File
-              </button>
-              <input
-                id="fileInput"
-                name="file"
-                type="file"
-                style="display:none;"
-                file
-                multiple
-              />
+              <div class="form-group">
+                <label for="exampleInputFile">File Upload</label>
+                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                <small id="fileHelp" class="form-text text-muted">Upload panorama photos.</small>
+              </div>
             </div>
           </div>
           <div class="row mt-4">
