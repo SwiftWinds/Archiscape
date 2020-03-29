@@ -293,9 +293,9 @@ var init = function(blockMap) {
 
     var mats = [];
     mats.push(new THREE.MeshBasicMaterial({ color: 0xbcbfa4 })); //RIGHT:dark white
-    mats.push(new THREE.MeshBasicMaterial({ color: 0xbcbfa4 })); //LEFT: dark white
+    mats.push(new THREE.MeshBasicMaterial({ color: "rgb(0, 0, 0)" })); //LEFT: dark white
     mats.push(new THREE.MeshBasicMaterial({ color: 0xbcbfa4 })); //Back: dark white
-    mats.push(new THREE.MeshBasicMaterial({ color: 0xd0d3b7 })); //Front: white
+    mats.push(new THREE.MeshBasicMaterial({ color: "rgb(0, 0, 0)" })); //Front: white
     mats.push(new THREE.MeshBasicMaterial({ color: 0x5b5b5b })); //TOP: Grey
     mats.push(new THREE.MeshBasicMaterial({ color: 0x0000 })); //Bottom:black
     var faceMaterial = new THREE.MeshFaceMaterial(mats);
