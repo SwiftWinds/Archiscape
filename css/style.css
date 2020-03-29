@@ -69,7 +69,7 @@
   padding-left: 1.5em;
 }
 
-.navbar-brand {
+.navbar-brand, .modeling-nav {
   font-size: 1.5em;
   font-weight: bold;
 }

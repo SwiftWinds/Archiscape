@@ -24,7 +24,7 @@
       <md-toolbar>
         <div class="md-toolbar-tools" ng-if="!ready">
           <h2>
-            <span ng-click="reload()">3D Modeling</span>
+            <span class="modeling-nav" ng-click="reload()">3D Modeling</span>
           </h2>
           <span flex></span>
           <md-button class="md-raised" ng-click="convertImageToData()">
@@ -42,7 +42,7 @@
 
         <div class="md-toolbar-tools" ng-if="ready">
           <h2>
-            <span ng-click="reload()">3D Modeling</span>
+            <span class="modeling-nav" ng-click="reload()">3D Modeling</span>
           </h2>
           <span flex></span> Controls:
           <md-button ng-click="xPlus()">X+</md-button>
