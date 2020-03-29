@@ -46,6 +46,16 @@ md-content {
   background-color: #eeeeee;
 }
 
+#mycanvas {
+  border-radius: 5px;
+  border: 2px solid #333;
+}
+
+#save-model-button {
+  -webkit-transform: none;
+  transform: none;
+}
+
 .main {
   min-width: 100%;
 }
