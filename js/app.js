@@ -325,7 +325,7 @@ var init = function(blockMap) {
     overalMesh = new THREE.Mesh(overalGeometry, faceMaterial);
     scene.add(overalMesh);
 
-    // var controls = new THREE.OrbitControls(camera, renderer.domElement );
+    var controls = new THREE.OrbitControls(camera, renderer.domElement); // for orbit controls
 };
 
 
