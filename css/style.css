@@ -69,7 +69,8 @@
   padding-left: 1.5em;
 }
 
-.navbar-brand, .modeling-nav {
+.navbar-brand,
+.modeling-nav {
   font-size: 1.5em;
   font-weight: bold;
 }
@@ -77,6 +78,19 @@
 .btn {
   font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.dropdown-menu, .dropdown-item {
+  background-color: #333;
+  color: white;
+}
+
+.dropdown-menu, .dropdown-divider {
+  border-color: #202020;
+}
+
+.dropdown-item:hover, .dropdown-item:active {
+  background-color: #202020;
 }
 
 html {
@@ -102,7 +116,8 @@ ul {
   font-size: 1.5em;
 }
 
-.go-button:hover, .go-button:active {
+.go-button:hover,
+.go-button:active {
   background-color: #144587;
 }
 
