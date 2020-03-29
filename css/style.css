@@ -49,7 +49,7 @@
 
 #learn-more:hover {
   background-color: white;
-  color: #333
+  color: #333;
 }
 
 .big-p {
@@ -80,4 +80,13 @@ html {
 
 b {
   font-weight: bold;
+}
+
+.card,
+.card-header {
+  border: 0;
+}
+
+ul {
+  list-style-type: none;
 }
