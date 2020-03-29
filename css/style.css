@@ -1,174 +1,171 @@
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
 .bg {
-  background-image: url("../img/bg.jpg");
-  height: 100%;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("../img/bg.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .main-card-container {
-  padding-top: 18vh;
-  min-height: 60vh;
-  padding-bottom: 5vh;
+    padding-top: 18vh;
+    min-height: 60vh;
+    padding-bottom: 5vh;
 }
 
 .main-card-container2 {
-  padding-top: 18vh;
-  padding-bottom: 10vh;
+    padding-top: 18vh;
+    padding-bottom: 10vh;
 }
 
 .main-card,
 .main-card row,
 .main-card col,
 md-content {
-  max-height: 100%;
-  max-width: 100%;
-  min-height: 100%;
-  min-width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+    max-height: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-#save-model-button, #mycanvas {
-  -webkit-transform: none;
-  transform: none;
+#save-model-button,
+#mycanvas {
+    -webkit-transform: none;
+    transform: none;
 }
 
 .main {
-  min-width: 100%;
+    min-width: 100%;
 }
 
 .subtitle {
-  color: rgb(218, 218, 218);
-  font-size: 2em;
+    color: rgb(218, 218, 218);
+    font-size: 2em;
 }
 
 .md-content {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .main-title {
-  font-weight: 500;
-  color: white;
-  font-size: 3.5em;
-  margin-top: 20vh;
-  max-width: 100%;
+    font-weight: 500;
+    color: white;
+    font-size: 3.5em;
+    margin-top: 20vh;
+    max-width: 100%;
 }
 
 .navbar-toggler {
-  color: #fff;
-  border: 0;
+    color: #fff;
+    border: 0;
 }
 
 .navbar-item {
-  font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .custom-brand {
-  font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .big-btn {
-  padding: 0.7em 1.5em;
-  font-size: 1.3em;
+    padding: 0.7em 1.5em;
+    font-size: 1.3em;
 }
 
 #about {
-  background-color: rgb(248, 248, 248);
+    background-color: rgb(248, 248, 248);
 }
 
 #learn-more {
-  color: white;
+    color: white;
 }
 
 #learn-more:hover {
-  background-color: white;
-  color: #333;
+    background-color: white;
+    color: #333;
 }
 
 .big-p {
-  font-size: 2em;
+    font-size: 2em;
 }
 
 .nav-link {
-  font-size: 1.3em;
+    font-size: 1.3em;
 }
 
 .nav-item {
-  padding-left: 1.5em;
+    padding-left: 1.5em;
 }
 
 .navbar-brand {
-  font-size: 2em;
-  font-weight: bold;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .btn {
-  font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .dropdown-menu,
 .dropdown-item {
-  background-color: #333;
-  color: white;
+    background-color: #333;
+    color: white;
 }
 
 .dropdown-menu,
 .dropdown-divider {
-  border-color: #202020;
+    border-color: #202020;
 }
 
 .dropdown-item:hover,
 .dropdown-item:active {
-  background-color: #202020;
+    background-color: #202020;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 b {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .modern-card.card,
 .modern-card.card-header {
-  border: 0;
+    border: 0;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .go-button {
-  background-color: #184f99;
-  border: 0;
-  font-size: 1.5em;
+    background-color: #184f99;
+    border: 0;
+    font-size: 1.5em;
 }
 
 .go-button:hover,
 .go-button:active {
-  background-color: #144587;
+    background-color: #144587;
 }
 
 .blue {
-  color: #184f99;
+    color: #184f99;
 }
 
 p.blue {
-  color: #0f3466;
+    color: #0f3466;
 }
