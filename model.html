@@ -1,13 +1,15 @@
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sketch to Model</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.css" />
+    <link
+      rel="stylesheet"
+      href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.css"
+    />
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
@@ -17,12 +19,13 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/OrbitControls.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-</head>
+  </head>
 
-<body ng-app="modelingApp">
+  <body ng-app="modelingApp">
     <div ng-controller="MainCtrl">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" id="custom-brand" ng-click="reload()">3D Modeling</a
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" id="custom-brand" ng-click="reload()"
+          >3D Modeling</a
         >
         <button
           class="navbar-toggler"
@@ -53,92 +56,174 @@
             <h1 class="mt-2"><b>3D Modeling</b></h1>
           </div>
           <div class=" container-fluid card-body">
-            <md-content>
-              <div class="row">
-                <div class="col">
-                  <p class="lead">
-                    Upload a 2D floor plan to get a 3D building model.
-                  </p>
+            <div class="row" id="instructionsRow">
+              <div class="col">
+                <p class="lead">
+                  Upload a 2D floor plan to get a 3D building model.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-md-6" id="form">
+                <button
+                  id="fileInputButton"
+                  class="btn btn-outline-primary"
+                  ng-click="convertImageToData()"
+                >
+                  Select File
+                </button>
+                <input
+                  id="fileInput"
+                  name="file"
+                  type="file"
+                  style="display:none;"
+                  file
+                  multiple
+                />
+
+                <button
+                  class="btn btn-primary"
+                  ng-click="showConfirm() "
+                  ng-if="fileName.length > 0"
+                  id="renderButton"
+                >
+                  Render 3D Model
+                </button>
+
+                <div class="row">
+                  <div class="col-6">
+                    <img
+                      id="floorplan"
+                      src="#"
+                      class="img-fluid mt-3"
+                      style="display:none"
+                    />
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col col-md-6">
-                  <button
-                    class="btn btn-outline-primary"
-                    ng-click="convertImageToData()"
-                  >
-                    Select File
-                  </button>
-                  <input
-                    id="fileInput"
-                    name="file"
-                    type="file"
-                    style="display:none;"
-                    file
-                    multiple
-                  />
 
-                  <button
-                    class="btn btn-primary"
-                    ng-click="showConfirm() " 
-                    ng-if="fileName.length > 0"
-                  >
-                    Render 3D Model
-                  </button>
-
-                  <img id="floorplan" src="#" class="img-fluid m-0" style='display: none'>
-
-                  <div class="md-toolbar-tools" ng-if="ready">
-                    <!-- <h2>
+              <div class="container align-content-center">
+                <div class="md-toolbar-tools" ng-if="ready">
+                  <!-- <h2>
                       <span class="modeling-nav" ng-click="reload()"
                         >3D Modeling</span
                       >
                     </h2> -->
-                    <span flex></span> Controls:
-                    <md-button ng-click="xPlus()">X+</md-button>
-                    <md-button ng-click="xMinus()">X-</md-button>
-                    <md-button ng-click="yPlus()">Y+</md-button>
-                    <md-button ng-click="yMinus()">Y-</md-button>
-                    <md-button ng-click="threeDPlus()">3D Rotate+</md-button>
-                    <md-button ng-click="threeDMinus()">3D Rotate-</md-button>
-                    <md-button ng-click="rotate()">Rotate</md-button>
-                    <md-button ng-click="depthPlus()">View+</md-button>
-                    <md-button ng-click="depthMinus()">View-</md-button>
-                    <md-button ng-click="scalePlus()">Scale+</md-button>
-                    <md-button ng-click="scaleMinus()">Scale-</md-button>
+                  <div class="row toolbar justify-content-center mt-2">
+                    <div class="col">
+                      <button class="btn" ng-click="xMinus()">
+                        X-
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn" ng-click="xPlus()">
+                        X+
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn " ng-click="yPlus()">
+                        Y+
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn " ng-click="yMinus()">
+                        Y-
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn" ng-click="threeDPlus()">
+                        Rotate+
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn" ng-click="threeDMinus()">
+                        Rotate-
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn" ng-click="rotate()">
+                        2DRotate
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn" ng-click="depthPlus()">
+                        View+
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn" ng-click="depthMinus()">
+                        View-
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn" ng-click="scalePlus()">
+                        Scale+
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn" ng-click="scaleMinus()">
+                        Scale-
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-center" ng-if="ready">
+                  <div class="col-6 p-4 text-center">
+                    <p>Canvas should go here.</p>
+                  </div>
+                </div>
+
+                <div class="row justify-content-center">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <input
+                        ng-if="ready"
+                        id="name"
+                        type="text"
+                        class="form-control"
+                        placeholder="Model Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <button
+                      ng-if="ready"
+                      type="button"
+                      ng-click="save()"
+                      class="btn btn-primary"
+                    >
+                      Save Model
+                    </button>
                   </div>
                 </div>
               </div>
-            </md-content>
-
+            </div>
+            
             <div ng-if="!ready">
-              <canvas id="canvas" width="0" height="0">
+              <canvas id="canvas" width="0" height="0" style="display:none">
                 Your browser does not support the HTML5 canvas tag.
               </canvas>
             </div>
-            <div class="form-group">
-              <label ng-if="ready" class="col-form-label" for="inputDefault"
-                >Model Name</label
-              >
-              <input
-                ng-if="ready"
-                id="name"
-                type="text"
-                class="form-control"
-                placeholder="Model Name"
-              />
-            </div>
-            <button
-              ng-if="ready"
-              type="button"
-              ng-click="save()"
-              class="btn btn-primary btn-lg"
-            >
-              Save Model
-            </button>
           </div>
         </div>
       </div>
     </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

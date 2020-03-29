@@ -23,9 +23,27 @@
   padding-bottom: 5vh;
 }
 
-.main-card {
-  min-width: 100%;
+.main-card,
+.main-card row,
+.main-card col,
+md-content {
+  max-height: 100%;
+  max-width: 100%;
   min-height: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.md-toolbar-tools button {
+  border: 1px #333 solid;
+  -webkit-transform: none;
+  transform: none;
+  border-radius: 5px;
+}
+
+.md-toolbar-tools button:hover, .md-toolbar-tools button:active {
+  background-color: #eeeeee;
 }
 
 .main {
@@ -104,16 +122,19 @@
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-.dropdown-menu, .dropdown-item {
+.dropdown-menu,
+.dropdown-item {
   background-color: #333;
   color: white;
 }
 
-.dropdown-menu, .dropdown-divider {
+.dropdown-menu,
+.dropdown-divider {
   border-color: #202020;
 }
 
-.dropdown-item:hover, .dropdown-item:active {
+.dropdown-item:hover,
+.dropdown-item:active {
   background-color: #202020;
 }
 
