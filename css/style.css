@@ -102,7 +102,7 @@ ul {
   font-size: 1.5em;
 }
 
-.go-button:hover {
+.go-button:hover, .go-button:active {
   background-color: #144587;
 }
 
