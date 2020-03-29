@@ -21,13 +21,13 @@ var provider = new firebase.auth.GoogleAuthProvider();
 
 function signUpWithGoogle() {
     console.log('hi');
-    firebase.auth().signInWithPopup(provider).then(function (result) {
+    firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
         // ...
-    }).catch(function (error) {
+    }).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -45,11 +45,12 @@ function uploadData() {
     var storageRef = firebase.storage().ref();
     var userRef = storageRef.child(uid);
     var file = new File();
-    userRef.put(file).then(function (snapshot) {
+    userRef.put(file).then(function(snapshot) {
         console.log('file uploaded');
     });
 
 }
+
 function getData() {
     var user = firebase.auth().currentUser;
     var uid = user.uid;
