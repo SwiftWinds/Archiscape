@@ -1,4 +1,4 @@
-var fileInput= document.getElementById('fileInput');
+var fileInput = document.getElementById('fileInput');
 console.log(fileInput);
 
 
@@ -13,7 +13,7 @@ angular.module('modelingApp', ['ngMaterial'])
     $scope.showConfirm = function(ev) {
         // Appending dialog to document.body to cover sidenav in docs app
         var confirm = $mdDialog.confirm()
-            .textContent('Are you sure?')
+            .textContent('Would you like to render this model?')
             .ariaLabel('')
             .targetEvent(ev)
             .ok('Yes')
@@ -38,18 +38,18 @@ angular.module('modelingApp', ['ngMaterial'])
                 img.onload = function() {
                     ctx.canvas.width = img.width;
                     ctx.canvas.height = img.height;
-								ctx.drawImage(img, 0,0, img.width, img.height);
-								//Retrieve data
-								$scope.imgData = ctx.getImageData(0, 0, img.width, img.height);
-								$scope.fileName = file.name;
-								//Convert to binary format
-								$scope.convertDataToBinaryArray($scope.imgData);
-								$scope.$apply();
+                    ctx.drawImage(img, 0, 0, img.width, img.height);
+                    //Retrieve data
+                    $scope.imgData = ctx.getImageData(0, 0, img.width, img.height);
+                    $scope.fileName = file.name;
+                    //Convert to binary format
+                    $scope.convertDataToBinaryArray($scope.imgData);
+                    $scope.$apply();
                 }
                 img.src = URL.createObjectURL(file);
 
             } else {
-				alert("File not supported. You must use a .png");
+                alert("File not supported. You must use a .png");
             }
 
         });
@@ -276,6 +276,10 @@ var init = function(blockMap) {
     camera.position.x = window.innerWidth / 2;
     camera.position.y = window.innerHeight / 2;
     camera.position.z = 100;
+
+    camera.rotation.x += 0.25;
+    camera.position.x -= 450;
+    camera.position.y -= 50;
 
     var directionalLight = new THREE.DirectionalLight(0x00ff00, 1);
     directionalLight.position.set(0, 1, 0);
