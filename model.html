@@ -79,19 +79,56 @@
         </md-content>
         <md-content flex layout-padding ng-if="!ready && fileName.length <= 0">
             <h1>How it works</h1>
-            <div class="row">
-              <div class="column" style="background-color:#aaa;">
-                <h3>1. Upload a Floor Plan</h3>
-                <h4>Send us a PNG</h4>
-              </div>
-              <div class="column" style="background-color:#bbb;">
-                <h3>2. Generate your 3D Building</h3>
-                <h4>Our software turns your floor plan into a 3 dimensional walkthrough</h4>
-              </div>
-              <div class="column" style="background-color:#ccc;">
-                <h3>3. Save and Edit your models anywhere </h3>
-                <h4>View your models and export files</h4>
-              </div>
+            <div
+              class="col-md-5 mr-md-5 card card-body shadow text-center wow fadeIn slow"
+              data-wow-delay="0.4s"
+            >
+              <h2 class="mb-3 blue"><b>1. Upload a Floor Plan</b></h2>
+              <p class="lead">
+                Send us a PNG
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-primary go-button"
+                onclick="window.location.href = 'model.html';"
+              >
+                Go!
+              </button>
+            </div>
+            <div
+              class="col-md-5 mr-md-5 card card-body shadow text-center wow fadeIn slow"
+              data-wow-delay="0.4s"
+            >
+              <h2 class="mb-3 blue"><b>2. Generate your 3D Building</b></h2>
+              <p class="lead">
+                Our software turns your floor plan into a 3 dimensional walkthrough
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-primary go-button"
+                onclick="window.location.href = 'model.html';"
+              >
+                Go!
+              </button>
+            </div>
+            <div
+              class="col-md-5 mr-md-5 card card-body shadow text-center wow fadeIn slow"
+              data-wow-delay="0.4s"
+            >
+              <h2 class="mb-3 blue"><b>3. Save and Edit your models anywhere</b></h2>
+              <p class="lead">
+                View your models and export files
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-primary go-button"
+                onclick="window.location.href = 'model.html';"
+              >
+                Go!
+              </button>
             </div>
         </md-content>
 
