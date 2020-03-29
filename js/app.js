@@ -21,9 +21,11 @@ angular
           .cancel("Cancel");
         $mdDialog.show(confirm).then(
           function() {
+            // delete all elements in card
+            
+
             $scope.draw3dModel();
-          },
-          function() {}
+          }
         );
       };
 
@@ -346,3 +348,10 @@ var render = function() {
   requestAnimationFrame(render);
   renderer.render(scene, camera);
 };
+
+$(document).ready(() => {
+    console.log(1);
+    $('.main-card').children().toArray().forEach((child) => {
+        console.log(child);
+    });
+});
