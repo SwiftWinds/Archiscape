@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NameOfThing</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.css"
-    />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
@@ -19,55 +17,44 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/OrbitControls.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-  </head>
+</head>
 
-  <body ng-app="modelingApp">
-    <nav
-      class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary pl-md-5"
-    >
-      <a class="navbar-brand" href="#home">Name</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarColor01"
-        aria-controls="navbarColor01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+<body ng-app="modelingApp">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary pl-md-5">
+        <a class="navbar-brand" href="#home">Name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse float-right" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#home"
-              >Home <span class="sr-only">(current)</span></a
+        <div class="collapse navbar-collapse float-right" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#start">Start</a>
-          </li>
-        </ul>
-      </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#start">Start</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <div class="main container-fluid bg pl-md-5" id="home">
-      <div class="row">
-        <div class="col">
-          <h1 class="main-title">NameThing</h1>
+        <div class="row">
+            <div class="col">
+                <h1 class="main-title">NameThing</h1>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h2 class="subtitle">
-            3D virtual tours and models made easy.
-          </h2>
+        <div class="row">
+            <div class="col">
+                <h2 class="subtitle">
+                    3D models and virtual tours made easy.
+                </h2>
+            </div>
         </div>
-      </div>
 
       <div class="row">
         <div class="col">
@@ -77,53 +64,45 @@
           >
             Get Started
           </a>
-          <a
-            href="#about"
-            id="learn-more"
-            class="btn btn-outline-light btn-lg mt-4 big-btn"
-          >
+                <a href="#about" id="learn-more" class="btn btn-outline-light btn-lg mt-4 big-btn">
             Learn more
           </a>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="container-fluid pt-5 pb-5" id="about">
-      <div class="row pt-5 justify-content-center">
-        <div class="col text-center">
-          <h1><b>Speed up renovation and homebuilding. </b></h1>
+        <div class="row pt-5 justify-content-center">
+            <div class="col text-center">
+                <h1><b>Speed up renovation and homebuilding. </b></h1>
+            </div>
         </div>
-      </div>
 
-      <div class="row pt-5 pr-5 pl-5 justify-content-around">
-        <div class="col-md-6 text-center">
-          <h2>
-            2D to 3D
-          </h2>
-          <p class="lead">
-            <b>Generate a 3D building model from just a 2D floorplan!</b>
-            Renovators, home builders, and architects who once needed to
-            manually design 3D models can now simply upload a 2D floorplan and
-            recieve an automatically generated 3D model.
-          </p>
+        <div class="row pt-5 pr-5 pl-5 justify-content-around">
+            <div class="col-md-6 text-center">
+                <h2>
+                    2D to 3D
+                </h2>
+                <p class="lead">
+                    <b>Generate a 3D building model from just a 2D floorplan!</b> Renovators, home builders, and architects who once needed to manually design 3D models can now simply upload a 2D floorplan and recieve an automatically generated 3D model.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <h2>
+                    3D Model Viewing
+                </h2>
+                <p class="lead">
+                    <b>View the 3D building model without leaving our app!</b> After we generate the 3D building model from a 2D floorplan, view all aspects of the model from all angles.
+                </p>
+            </div>
         </div>
-        <div class="col-md-6 text-center">
-          <h2>
-            3D Model Viewing
-          </h2>
-          <p class="lead">
-            <b>View the 3D building model without leaving our app!</b> After we
-            generate the 3D building model from a 2D floorplan, view all aspects
-            of the model from all angles.
-          </p>
-        </div>
-      </div>
 
-      <div class="row pt-5 justify-content-center">
-        <div class="col text-center">
-          <h1><b>View and show homes without leaving yours. </b></h1>
+        <div class="row pt-5 justify-content-center">
+            <div class="col text-center">
+                <h1><b>View and show homes without leaving yours. </b></h1>
+                <br><br>
+            </div>
         </div>
-      </div>
 
       <div class="row p-5">
         <div class="col-md-6 text-center">
@@ -143,12 +122,10 @@
             Virtual Tours
           </h2>
           <p class="lead">
-            <b>View or display the 3D model in a virtual tour!</b> The 3D model
-            we generate from pictures can be used to conduct virtual tours.
-            Realtors and buyers can view homes more easily than ever.
-          </p>
+            <b>View or display the 3D model in a virtual tour!</b> The 3D model we generate from pictures can be used to conduct virtual tours. Realtors and buyers can view homes more easily than ever.
+                </p>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="container-fluid pt-5 p-md-5 mb-3 mb-md-5" id="start">
@@ -201,8 +178,25 @@
           >
             Go!
           </button>
+            </div>
         </div>
-      </div>
     </div>
-  </body>
+
+    <div id="build" class="container-fluid pt-5 pb-5" id="start">
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <h1><b>Create a virtual tour. From scratch.</b></h1>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <button type="button" id="get-started" class="btn btn-primary btn-lg mt-4 big-btn" onclick="window.location.href = 'model.html';">
+          Get Started
+        </button>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

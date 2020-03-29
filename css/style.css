@@ -1,84 +1,90 @@
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
+
 .bg {
-  background-image: url("../img/bg.jpg");
-  height: 100%;
+    background-image: url("../img/bg.jpg");
+    height: 100%;
 }
 
 .main {
-  min-width: 100%;
+    min-width: 100%;
 }
 
 .subtitle {
-  color: rgb(218, 218, 218);
-  font-size: 2em;
+    color: rgb(218, 218, 218);
+    font-size: 2em;
 }
 
 .main-title {
-  font-weight: 500;
-  color: white;
-  font-size: 3.5em;
-  margin-top: 20vh;
-  max-width: 100%;
+    font-weight: 500;
+    color: white;
+    font-size: 3.5em;
+    margin-top: 20vh;
+    max-width: 100%;
 }
 
 .navbar-toggler {
-  color: #fff;
-  border: 0;
+    color: #fff;
+    border: 0;
 }
 
 .big-btn {
-  padding: 0.7em 1.5em;
-  font-size: 1.3em;
+    padding: 0.7em 1.5em;
+    font-size: 1.3em;
 }
 
 #about {
-  background-color: rgb(248, 248, 248);
+    background-color: rgb(248, 248, 248);
 }
 
 #learn-more {
-  color: white;
+    color: white;
 }
 
 #learn-more:hover {
+<<<<<<< HEAD
   background-color: white;
   color: #333;
+=======
+    background-color: white;
+    color: #333
+>>>>>>> 9216b4e8ab18ff89b894efcb7d9f700dfb0a6c8e
 }
 
 .big-p {
-  font-size: 2em;
+    font-size: 2em;
 }
 
 .nav-link {
-  font-size: 1.3em;
+    font-size: 1.3em;
 }
 
 .nav-item {
-  padding-left: 1.5em;
+    padding-left: 1.5em;
 }
 
 .navbar-brand {
-  font-size: 1.5em;
-  font-weight: bold;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .btn {
-  font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 b {
+<<<<<<< HEAD
   font-weight: bold;
 }
 
@@ -90,3 +96,11 @@ b {
 ul {
   list-style-type: none;
 }
+=======
+    font-weight: bold;
+}
+
+#build {
+    background-color: rgb(248, 248, 248);
+}
+>>>>>>> 9216b4e8ab18ff89b894efcb7d9f700dfb0a6c8e
