@@ -278,6 +278,8 @@ var init = function(blockMap) {
     camera.position.z = 100;
 
     camera.rotation.x += 0.25;
+    camera.position.x -= 450;
+    camera.position.y -= 50;
 
     var directionalLight = new THREE.DirectionalLight(0x00ff00, 1);
     directionalLight.position.set(0, 1, 0);
