@@ -137,8 +137,6 @@
         controls.staticMoving = true;
         controls.minDistance = 0.3;
         controls.maxDistance = 0.3 * 100;
-        stats = new Stats();
-        container.appendChild(stats.dom);
         window.addEventListener("resize", onWindowResize, false);
         window.addEventListener("keypress", keyboard);
         new Promise(res => setTimeout(res, 1500)).then(() => {
