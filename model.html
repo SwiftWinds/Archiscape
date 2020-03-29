@@ -16,6 +16,24 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/OrbitControls.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 10px;
+      height: 500px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
 </head>
 
 <body ng-app="modelingApp">
@@ -60,7 +78,21 @@
             </md-toolbar>
         </md-content>
         <md-content flex layout-padding ng-if="!ready && fileName.length <= 0">
-            <h3>App homepage goes here</h3>
+            <h1>How it works</h1>
+            <div class="row">
+              <div class="column" style="background-color:#aaa;">
+                <h3>1. Upload a Floor Plan</h3>
+                <h4>Send us a PNG</h4>
+              </div>
+              <div class="column" style="background-color:#bbb;">
+                <h3>2. Generate your 3D Building</h3>
+                <h4>Our software turns your floor plan into a 3 dimensional walkthrough</h4>
+              </div>
+              <div class="column" style="background-color:#ccc;">
+                <h3>3. Save and Edit your models anywhere </h3>
+                <h4>View your models and export files</h4>
+              </div>
+            </div>
         </md-content>
 
         <div ng-if="!ready">
