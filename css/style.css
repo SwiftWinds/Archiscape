@@ -17,6 +17,17 @@
   background-size: cover;
 }
 
+.main-card-container {
+  padding-top: 18vh;
+  min-height: 60vh;
+  padding-bottom: 5vh;
+}
+
+.main-card {
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .main {
   min-width: 100%;
 }
@@ -24,6 +35,10 @@
 .subtitle {
   color: rgb(218, 218, 218);
   font-size: 2em;
+}
+
+.md-content {
+  max-width: 100%;
 }
 
 .main-title {
@@ -37,6 +52,16 @@
 .navbar-toggler {
   color: #fff;
   border: 0;
+}
+
+.navbar-item {
+  font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.custom-brand {
+  font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .big-btn {
@@ -69,9 +94,8 @@
   padding-left: 1.5em;
 }
 
-.navbar-brand,
-.modeling-nav {
-  font-size: 1.5em;
+.navbar-brand {
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -101,8 +125,8 @@ b {
   font-weight: bold;
 }
 
-.card,
-.card-header {
+.modern-card.card,
+.modern-card.card-header {
   border: 0;
 }
 

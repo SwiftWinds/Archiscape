@@ -1,3 +1,7 @@
+var fileInput= document.getElementById('fileInput');
+console.log(fileInput);
+
+
 angular.module('modelingApp', ['ngMaterial'])
 
 .controller("MainCtrl", ['$scope', '$mdDialog', function($scope, $mdDialog) {
@@ -9,11 +13,10 @@ angular.module('modelingApp', ['ngMaterial'])
     $scope.showConfirm = function(ev) {
         // Appending dialog to document.body to cover sidenav in docs app
         var confirm = $mdDialog.confirm()
-            .title('Would you like to to render this 3D model?')
-            .textContent('Once confirmed, the 3D model will be rendered in a few seconds...')
+            .textContent('Are you sure?')
             .ariaLabel('')
             .targetEvent(ev)
-            .ok('Confirm')
+            .ok('Yes')
             .cancel('Cancel');
         $mdDialog.show(confirm).then(function() {
             $scope.draw3dModel();
