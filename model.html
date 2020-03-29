@@ -88,7 +88,14 @@
                   >
                     Render 3D Model
                   </button>
-
+                </div>
+              </div>
+              <div class="row mt-5"></div>
+                <div class="col">
+                  <img id="floorplan" src="#" class="img-fluid m-0" style='display: none'>
+                </div>
+              </div>
+                <div>
                   <div class="md-toolbar-tools" ng-if="ready">
                     <h2>
                       <span class="modeling-nav" ng-click="reload()"
@@ -113,7 +120,7 @@
             </md-content>
 
             <div ng-if="!ready">
-              <canvas id="canvas" width="0" height="0">
+              <canvas id="canvas" width="0" height="0" style="display: none">
                 Your browser does not support the HTML5 canvas tag.
               </canvas>
             </div>
