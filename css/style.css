@@ -174,3 +174,7 @@ ul {
 p.blue {
     color: #0f3466;
 }
+
+.home {
+    height: 100vh;
+}
